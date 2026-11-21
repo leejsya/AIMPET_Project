@@ -4,5 +4,4 @@ __pycache__/
 .env
 *.sqlite3
 .DS_Store
-Backends/*/media/
-nginx-proxy-manager/
+Backends/*/media/nginx-proxy-manager/data/logs/

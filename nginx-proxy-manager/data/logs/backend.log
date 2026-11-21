@@ -1,0 +1,225 @@
+2026-11-17T07:34:25.565Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-11-17T07:34:25.574Z INFO    [Global] Creating a new JWT key pair...
+2026-11-17T07:34:25.617Z INFO    [Global] Wrote JWT key pair to config file: /data/keys.json
+2026-11-17T07:34:25.673Z INFO    [Migrate] Current database version: none
+2026-11-17T07:34:25.689Z INFO    [Migrate] [initial-schema] Migrating Up...
+2026-11-17T07:34:25.689Z INFO    [Migrate] [initial-schema] auth Table created
+2026-11-17T07:34:25.689Z INFO    [Migrate] [initial-schema] user Table created
+2026-11-17T07:34:25.690Z INFO    [Migrate] [initial-schema] user_permission Table created
+2026-11-17T07:34:25.690Z INFO    [Migrate] [initial-schema] proxy_host Table created
+2026-11-17T07:34:25.690Z INFO    [Migrate] [initial-schema] redirection_host Table created
+2026-11-17T07:34:25.690Z INFO    [Migrate] [initial-schema] dead_host Table created
+2026-11-17T07:34:25.691Z INFO    [Migrate] [initial-schema] stream Table created
+2026-11-17T07:34:25.691Z INFO    [Migrate] [initial-schema] access_list Table created
+2026-11-17T07:34:25.691Z INFO    [Migrate] [initial-schema] certificate Table created
+2026-11-17T07:34:25.691Z INFO    [Migrate] [initial-schema] access_list_auth Table created
+2026-11-17T07:34:25.691Z INFO    [Migrate] [initial-schema] audit_log Table created
+2026-11-17T07:34:25.691Z INFO    [Migrate] [websockets] Migrating Up...
+2026-11-17T07:34:25.691Z INFO    [Migrate] [websockets] proxy_host Table altered
+2026-11-17T07:34:25.691Z INFO    [Migrate] [forward_host] Migrating Up...
+2026-11-17T07:34:25.692Z INFO    [Migrate] [forward_host] proxy_host Table altered
+2026-11-17T07:34:25.692Z INFO    [Migrate] [http2_support] Migrating Up...
+2026-11-17T07:34:25.692Z INFO    [Migrate] [http2_support] proxy_host Table altered
+2026-11-17T07:34:25.692Z INFO    [Migrate] [http2_support] redirection_host Table altered
+2026-11-17T07:34:25.692Z INFO    [Migrate] [http2_support] dead_host Table altered
+2026-11-17T07:34:25.692Z INFO    [Migrate] [forward_scheme] Migrating Up...
+2026-11-17T07:34:25.692Z INFO    [Migrate] [forward_scheme] proxy_host Table altered
+2026-11-17T07:34:25.693Z INFO    [Migrate] [disabled] Migrating Up...
+2026-11-17T07:34:25.693Z INFO    [Migrate] [disabled] proxy_host Table altered
+2026-11-17T07:34:25.693Z INFO    [Migrate] [disabled] redirection_host Table altered
+2026-11-17T07:34:25.693Z INFO    [Migrate] [disabled] dead_host Table altered
+2026-11-17T07:34:25.693Z INFO    [Migrate] [disabled] stream Table altered
+2026-11-17T07:34:25.693Z INFO    [Migrate] [custom_locations] Migrating Up...
+2026-11-17T07:34:25.693Z INFO    [Migrate] [custom_locations] proxy_host Table altered
+2026-11-17T07:34:25.693Z INFO    [Migrate] [hsts] Migrating Up...
+2026-11-17T07:34:25.693Z INFO    [Migrate] [hsts] proxy_host Table altered
+2026-11-17T07:34:25.694Z INFO    [Migrate] [hsts] redirection_host Table altered
+2026-11-17T07:34:25.694Z INFO    [Migrate] [hsts] dead_host Table altered
+2026-11-17T07:34:25.694Z INFO    [Migrate] [settings] Migrating Up...
+2026-11-17T07:34:25.694Z INFO    [Migrate] [settings] setting Table created
+2026-11-17T07:34:25.694Z INFO    [Migrate] [access_list_client] Migrating Up...
+2026-11-17T07:34:25.694Z INFO    [Migrate] [access_list_client] access_list_client Table created
+2026-11-17T07:34:25.694Z INFO    [Migrate] [access_list_client] access_list Table altered
+2026-11-17T07:34:25.694Z INFO    [Migrate] [access_list_client_fix] Migrating Up...
+2026-11-17T07:34:25.695Z INFO    [Migrate] [access_list_client_fix] access_list Table altered
+2026-11-17T07:34:25.695Z INFO    [Migrate] [pass_auth] Migrating Up...
+2026-11-17T07:34:25.695Z INFO    [Migrate] [pass_auth] access_list Table altered
+2026-11-17T07:34:25.695Z INFO    [Migrate] [redirection_scheme] Migrating Up...
+2026-11-17T07:34:25.695Z INFO    [Migrate] [redirection_scheme] redirection_host Table altered
+2026-11-17T07:34:25.695Z INFO    [Migrate] [redirection_status_code] Migrating Up...
+2026-11-17T07:34:25.695Z INFO    [Migrate] [redirection_status_code] redirection_host Table altered
+2026-11-17T07:34:25.695Z INFO    [Migrate] [stream_domain] Migrating Up...
+2026-11-17T07:34:25.696Z INFO    [Migrate] [stream_domain] stream Table altered
+2026-11-17T07:34:25.696Z INFO    [Migrate] [stream_domain] Migrating Up...
+2026-11-17T07:34:25.696Z INFO    [Migrate] [stream_ssl] Migrating Up...
+2026-11-17T07:34:25.696Z INFO    [Migrate] [stream_ssl] stream Table altered
+2026-11-17T07:34:25.696Z INFO    [Migrate] [redirect_auto_scheme] Migrating Up...
+2026-11-17T07:34:25.700Z INFO    [Migrate] [redirect_auto_scheme] redirection_host Table altered
+2026-11-17T07:34:25.700Z INFO    [Migrate] [trust_forwarded_proto] Migrating Up...
+2026-11-17T07:34:25.700Z INFO    [Migrate] [trust_forwarded_proto] proxy_host Table altered
+2026-11-17T07:34:25.700Z INFO    [Migrate] [user_permission_meta] Migrating Up...
+2026-11-17T07:34:25.700Z INFO    [Migrate] [user_permission_meta] user_permission Table altered
+2026-11-17T07:34:25.707Z INFO    [Setup] Default settings added
+2026-11-17T07:34:25.707Z INFO    [Setup] Logrotate Timer initialized
+2026-11-17T07:34:25.711Z INFO    [Setup] Logrotate completed.
+2026-11-17T07:34:25.735Z INFO    [Global] IP Ranges fetch is enabled
+2026-11-17T07:34:25.736Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-17T07:34:25.736Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-17T07:34:25.925Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-17T07:34:25.978Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-17T07:34:26.023Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-11-17T07:34:26.023Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-17T07:34:26.024Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-11-17T07:34:26.025Z INFO    [SSL] Completed SSL cert renew process
+2026-11-17T07:34:26.025Z INFO    [Global] Backend PID 239 listening on port 3000 ...
+2026-11-17T07:36:17.585Z INFO    [Express] Creating a new user in setup mode
+2026-11-17T07:36:18.345Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-11-17T07:43:35.908Z INFO    [Nginx] Reloading Nginx
+2026-11-17T07:43:57.300Z INFO    [Nginx] Reloading Nginx
+2026-11-17T07:44:29.732Z INFO    [Nginx] Reloading Nginx
+2026-11-17T07:55:57.041Z INFO    [Global] PID 239 received SIGTERM
+2026-11-17T07:56:00.898Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-11-17T07:56:00.973Z INFO    [Migrate] Current database version: none
+2026-11-17T07:56:00.984Z INFO    [Setup] Logrotate Timer initialized
+2026-11-17T07:56:00.989Z INFO    [Setup] Logrotate completed.
+2026-11-17T07:56:01.014Z INFO    [Global] IP Ranges fetch is enabled
+2026-11-17T07:56:01.014Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-17T07:56:01.014Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-17T07:56:01.208Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-17T07:56:01.268Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-17T07:56:01.305Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-11-17T07:56:01.305Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-17T07:56:01.306Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-11-17T07:56:01.308Z INFO    [SSL] Completed SSL cert renew process
+2026-11-17T07:56:01.308Z INFO    [Global] Backend PID 235 listening on port 3000 ...
+2026-11-17T07:58:06.501Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-11-17T07:59:30.109Z INFO    [Nginx] Reloading Nginx
+2026-11-17T08:02:33.249Z INFO    [Global] PID 235 received SIGTERM
+2026-11-17T08:02:37.017Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-11-17T08:02:37.069Z INFO    [Migrate] Current database version: none
+2026-11-17T08:02:37.081Z INFO    [Setup] Logrotate Timer initialized
+2026-11-17T08:02:37.084Z INFO    [Setup] Logrotate completed.
+2026-11-17T08:02:37.109Z INFO    [Global] IP Ranges fetch is enabled
+2026-11-17T08:02:37.109Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-17T08:02:37.110Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-17T08:02:37.278Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-17T08:02:37.323Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-17T08:02:37.367Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-11-17T08:02:37.367Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-17T08:02:37.368Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-11-17T08:02:37.369Z INFO    [SSL] Completed SSL cert renew process
+2026-11-17T08:02:37.370Z INFO    [Global] Backend PID 235 listening on port 3000 ...
+2026-11-17T08:03:06.379Z INFO    [Global] PID 235 received SIGTERM
+2026-11-17T08:03:10.181Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-11-17T08:03:10.232Z INFO    [Migrate] Current database version: none
+2026-11-17T08:03:10.244Z INFO    [Setup] Logrotate Timer initialized
+2026-11-17T08:03:10.248Z INFO    [Setup] Logrotate completed.
+2026-11-17T08:03:10.274Z INFO    [Global] IP Ranges fetch is enabled
+2026-11-17T08:03:10.274Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-17T08:03:10.275Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-17T08:03:10.446Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-17T08:03:10.557Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-17T08:03:10.594Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-11-17T08:03:10.594Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-17T08:03:10.595Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-11-17T08:03:10.596Z INFO    [SSL] Completed SSL cert renew process
+2026-11-17T08:03:10.596Z INFO    [Global] Backend PID 235 listening on port 3000 ...
+2026-11-17T08:10:07.923Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-11-17T08:10:41.879Z INFO    [Global] PID 235 received SIGTERM
+2026-11-19T09:51:55.740Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-11-19T09:51:55.941Z INFO    [Migrate] Current database version: none
+2026-11-19T09:51:55.962Z INFO    [Setup] Logrotate Timer initialized
+2026-11-19T09:51:55.969Z INFO    [Setup] Logrotate completed.
+2026-11-19T09:51:56.013Z INFO    [Global] IP Ranges fetch is enabled
+2026-11-19T09:51:56.014Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-19T09:51:56.014Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-19T09:51:56.182Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-19T09:51:56.224Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-19T09:51:56.267Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-11-19T09:51:56.267Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-19T09:51:56.268Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-11-19T09:51:56.270Z INFO    [SSL] Completed SSL cert renew process
+2026-11-19T09:51:56.270Z INFO    [Global] Backend PID 235 listening on port 3000 ...
+2026-11-19T21:51:38.428Z INFO    [Global] PID 235 received SIGTERM
+2026-11-21T03:58:34.960Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-11-21T03:58:35.063Z INFO    [Migrate] Current database version: none
+2026-11-21T03:58:35.079Z INFO    [Setup] Logrotate Timer initialized
+2026-11-21T03:58:35.086Z INFO    [Setup] Logrotate completed.
+2026-11-21T03:58:35.121Z INFO    [Global] IP Ranges fetch is enabled
+2026-11-21T03:58:35.121Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-21T03:58:35.122Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-21T03:58:35.291Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-21T03:58:35.341Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-21T03:58:35.382Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-11-21T03:58:35.382Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-21T03:58:35.383Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-11-21T03:58:35.385Z INFO    [SSL] Completed SSL cert renew process
+2026-11-21T03:58:35.385Z INFO    [Global] Backend PID 235 listening on port 3000 ...
+2026-11-21T04:23:20.275Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-11-21T04:31:30.685Z INFO    [Global] PID 235 received SIGTERM
+2026-11-21T04:31:34.682Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-11-21T04:31:34.760Z INFO    [Migrate] Current database version: none
+2026-11-21T04:31:34.771Z INFO    [Setup] Logrotate Timer initialized
+2026-11-21T04:31:34.775Z INFO    [Setup] Logrotate completed.
+2026-11-21T04:31:34.801Z INFO    [Global] IP Ranges fetch is enabled
+2026-11-21T04:31:34.801Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-21T04:31:34.801Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-21T04:31:34.992Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-21T04:31:35.038Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-21T04:31:35.083Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-11-21T04:31:35.083Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-21T04:31:35.084Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-11-21T04:31:35.085Z INFO    [SSL] Completed SSL cert renew process
+2026-11-21T04:31:35.085Z INFO    [Global] Backend PID 235 listening on port 3000 ...
+2026-11-21T04:32:50.636Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-11-21T04:35:47.818Z INFO    [Global] PID 235 received SIGTERM
+2026-11-21T04:35:51.543Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-11-21T04:35:51.594Z INFO    [Migrate] Current database version: none
+2026-11-21T04:35:51.608Z INFO    [Setup] Logrotate Timer initialized
+2026-11-21T04:35:51.612Z INFO    [Setup] Logrotate completed.
+2026-11-21T04:35:51.636Z INFO    [Global] IP Ranges fetch is enabled
+2026-11-21T04:35:51.637Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-21T04:35:51.637Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-21T04:35:51.847Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-21T04:35:51.881Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-21T04:35:51.916Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-11-21T04:35:51.917Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-21T04:35:51.918Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-11-21T04:35:51.919Z INFO    [SSL] Completed SSL cert renew process
+2026-11-21T04:35:51.919Z INFO    [Global] Backend PID 235 listening on port 3000 ...
+2026-11-21T04:39:51.427Z INFO    [Global] PID 235 received SIGTERM
+2026-11-21T04:39:55.561Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-11-21T04:39:55.642Z INFO    [Migrate] Current database version: none
+2026-11-21T04:39:55.654Z INFO    [Setup] Logrotate Timer initialized
+2026-11-21T04:39:55.659Z INFO    [Setup] Logrotate completed.
+2026-11-21T04:39:55.685Z INFO    [Global] IP Ranges fetch is enabled
+2026-11-21T04:39:55.685Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-21T04:39:55.685Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-21T04:39:55.866Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-21T04:39:55.910Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-21T04:39:55.950Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-11-21T04:39:55.951Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-21T04:39:55.952Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-11-21T04:39:55.953Z INFO    [SSL] Completed SSL cert renew process
+2026-11-21T04:39:55.953Z INFO    [Global] Backend PID 235 listening on port 3000 ...
+2026-11-21T04:43:36.239Z INFO    [Global] PID 235 received SIGTERM
+2026-11-21T04:47:08.309Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-11-21T04:47:08.373Z INFO    [Migrate] Current database version: none
+2026-11-21T04:47:08.384Z INFO    [Setup] Logrotate Timer initialized
+2026-11-21T04:47:08.388Z INFO    [Setup] Logrotate completed.
+2026-11-21T04:47:08.414Z INFO    [Global] IP Ranges fetch is enabled
+2026-11-21T04:47:08.414Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-21T04:47:08.414Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-21T04:47:08.551Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-21T04:47:08.629Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-21T04:47:08.695Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-11-21T04:47:08.695Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-21T04:47:08.696Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-11-21T04:47:08.697Z INFO    [SSL] Completed SSL cert renew process
+2026-11-21T04:47:08.698Z INFO    [Global] Backend PID 235 listening on port 3000 ...
+2026-11-21T04:53:24.818Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-11-21T05:35:11.270Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-11-21T05:47:08.696Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-21T05:47:08.699Z INFO    [SSL] Completed SSL cert renew process
+2026-11-21T06:47:08.704Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-21T06:47:08.719Z INFO    [SSL] Completed SSL cert renew process

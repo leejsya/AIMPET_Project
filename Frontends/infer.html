@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BreastMNIST 분류</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div class="topbar">
+      <div>
+        <h1>유방 초음파 이미지 분석</h1>
+        <p class="sub">이미지를 올리면 악성(malignant) 점수를 예측합니다. 학습용 모델이며 실제 진단을 대신할 수 없습니다.</p>
+      </div>
+      <div class="row">
+        <a id="login-link" href="index.html" class="hidden">로그인</a>
+        <span id="user-name"></span>
+        <button id="logout-btn" class="hidden">로그아웃</button>
+      </div>
+    </div>
+    <p id="save-notice" class="notice"></p>
+
+    <section class="card">
+      <h2>이미지 업로드</h2>
+      <label id="drop-zone" class="drop-zone" for="image-input">
+        <span id="drop-text">이미지를 여기로 끌어다 놓거나 클릭해서 선택하세요</span>
+      </label>
+      <input type="file" id="image-input" accept="image/*" class="hidden">
+      <div class="row">
+        <button id="btn-upload" class="primary">분석하기</button>
+      </div>
+      <p id="message" class="message"></p>
+
+      <div id="result-area" class="hidden">
+        <div>
+          <div class="cam-box large">
+            <img id="result-image" alt="업로드한 이미지">
+            <img id="result-heatmap" class="cam-heatmap hidden" alt="히트맵">
+          </div>
+          <label id="cam-control" class="cam-control muted hidden">
+            히트맵
+            <input type="range" id="cam-opacity" min="0" max="1" step="0.05" value="0.5">
+          </label>
+        </div>
+        <div>
+          <p><span id="result-label" class="badge"></span></p>
+          <p>악성 점수 <b id="result-prob"></b> <span class="muted">(판정 기준 50%)</span></p>
+          <p id="guest-note" class="muted hidden">비로그인 상태라 이 결과는 저장되지 않습니다.</p>
+          <div id="save-ask" class="hidden">
+            <p class="ask">이 결과를 저장하시겠습니까?</p>
+            <div class="row">
+              <button id="btn-save" class="primary">저장</button>
+              <button id="btn-discard">저장 안 함</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>저장된 결과 <span id="count" class="muted"></span></h2>
+      <table id="result-table" class="hidden">
+        <thead>
+          <tr><th>이미지</th><th>판정</th><th>악성 점수</th><th>생성 시각</th><th></th></tr>
+        </thead>
+        <tbody id="result-list"></tbody>
+      </table>
+      <p id="empty" class="muted hidden">아직 저장된 결과가 없습니다.</p>
+    </section>
+  </main>
+  <script src="common.js"></script>
+  <script src="infer.js"></script>
+</body>
+</html>

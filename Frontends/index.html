@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIMPET 로그인</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="narrow">
+    <h1>AIMPET</h1>
+    <p class="sub">유방 초음파 이미지 분석 서비스. 로그인하면 분석 결과가 저장됩니다.</p>
+
+    <section class="card">
+      <h2>로그인</h2>
+      <form id="auth-form" class="stack">
+        <input type="text" id="username" placeholder="아이디" required autocomplete="username">
+        <input type="password" id="password" placeholder="비밀번호" required autocomplete="current-password">
+        <div class="row">
+          <button type="submit" class="primary">로그인</button>
+          <button type="button" id="signup-btn">회원가입</button>
+        </div>
+      </form>
+      <p id="message" class="message"></p>
+    </section>
+
+    <p class="muted"><a href="infer.html">로그인 없이 사용하기</a> (결과는 저장되지 않습니다)</p>
+  </main>
+  <script src="common.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

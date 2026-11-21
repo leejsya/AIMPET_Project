@@ -1,0 +1,8 @@
+myvenv/
+__pycache__/
+*.pyc
+.env
+*.sqlite3
+.DS_Store
+Backends/*/media/
+nginx-proxy-manager/

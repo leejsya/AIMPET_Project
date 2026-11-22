@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('DB_NAME', 'inf_db'),
         'USER': os.environ.get('DB_USER', 'inf_user'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'PASSWORD': os.environ.get('DB_PASSWORD', '2323'),
         'HOST': os.environ.get('DB_HOST', 'mysql'),
         'PORT': os.environ.get('DB_PORT', '3306'),
         'OPTIONS': {'charset': 'utf8mb4'},
@@ -137,7 +137,7 @@ MAILERS = {
 }
 
 # Redis에 접속할 주소
-REDIS_URL = os.environ.get('REDIS_URL', 'redis://myredis:6379/0')
+REDIS_URL = os.environ.get('REDIS_URL', 'redis://:2323@myredis:6379/0')
 # Redis 공유 저장소 설정
 CACHES = {'default': {'BACKEND': 'django.core.cache.backends.redis.RedisCache',
                         'LOCATION': REDIS_URL}}

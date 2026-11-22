@@ -12,6 +12,7 @@ Database와 Redis 세션, 그리고 서버의 역할에 무게를 더 주기 위
 1. 로그인/로그아웃/회원가입 기능을 수행하는 user server 구축
 2. inference server에 CAM 기능 추가 구현
 3. 서버 간 세션 공유 기능과 사용자 세션에 따른 Database 관리
+> 프론트엔드는 Claude Code의 도움을 받아 구현되었으며, 해당 내용을 토대로 필요한 부분은 기능에 맞도록 직접 수정하였습니다.  
 
 
 ## 1. 개발 환경
@@ -31,7 +32,20 @@ Database와 Redis 세션, 그리고 서버의 역할에 무게를 더 주기 위
 - leejsya0102/aimpet-frontend:latest
 - leejsya0102/aimpet-proxy:latest
 
-## 4. 컨테이너 구조
+## 4. 구글 드라이브 주소
+[drive](https://drive.google.com/drive/folders/1YBRKL_okqTu1wueOwEjbVoyGSH1C-PMP?usp=drive_link)
+- 구현 시연 영상
+- 도커 환경 캡처 이미지
+- 테스트를 위한 테스트 이미지 폴더
+- 시스템 구성도
+
+## 5. 딥러닝 모델링
+- 데이터셋 : MedMNIST의 BreastMNIST 데이터셋
+- 사전학습 모델 : ResNet18
+- 학습도구 : PyTorch
+> 학습 데이터셋이 작은 모델이라 추론 성능이 뛰어나진 않기에, 테스트할 때 여러번 다른 샘플을 입력하여 확인해야 함.
+
+## 6. 컨테이너 구조
 모든 컨테이너는 'AIMPET-net' 네트워크로 연결됨.
 1) inf_server(port:8000) - 모델 추론을 수행하는 서버
 2) user_server(port:8000) - 서비스의 사용자를 관리하는 서버
@@ -40,12 +54,12 @@ Database와 Redis 세션, 그리고 서버의 역할에 무게를 더 주기 위
 5) myredis(port:6379) - 세션 공유 저장소 기능을 수행하는 서버
 6) mysql(port:3306) - 데이터베이스 기능을 수행하는 서버
 
-## 5. Request Flow
+## 7. Request Flow
 - ```/``` -> frontend:80
 - ```/api/users/``` -> user_server:8000
 - ```/api/inf/``` -> inf_server:8000
 
-## 6. 기술 스택
+## 8. 기술 스택
 - 프론트엔드 : HTML, CSS, JavaScript
 - 백엔드 : Django, Django REST Framework, gunicorn
 - 모델 : PyTorch, ResNet18, CAM
@@ -54,7 +68,7 @@ Database와 Redis 세션, 그리고 서버의 역할에 무게를 더 주기 위
 - 인프라 : Docker
 - Proxy : Nginx Proxy Manager
 
-## 7. 폴더 구조
+## 9. 폴더 구조
 ```
 AIMPET_Project
 ├── Backends
@@ -67,13 +81,13 @@ AIMPET_Project
 ```
 > 각 폴더에 Dockerfile로 실행에 필요한 비밀번호, DB 초기화, 프록시 등의 설정을 작성함.
 
-## 8. 세션 공유 방식
+## 10. 세션 공유 방식
 1. 사용자가 로그인 시 user_server가 세션을 생성하고 user_id를 Redis 서버에 저장하며, 브라우저에서 세션 쿠기가 전달됨.
 2. 같은 쿠키를 프록시를 통해 inf_server에서도 사용.
 3. inf_server는 쿠키로 같은 Redis에서 세션을 읽어 로그인한 사용자(user_id)를 인식
 4. 로그인된 상태라면 분석 결과를 inf_db에 user_id와 함께 저장하고, 조회할 때는 로그인한 사용자의 결과만 보여줌.
 
-## 9. Proxy 설정
+## 11. Proxy 설정
 Reverse Proxy 설정은 이미지에 포함되어 있으므로 따로 진행할 필요가 없음. \
 브라우저에서 http://localhost:81 에 접속 시 프록시 설정을 직접 확인할 수 있음.
 > Nginx Proxy Manager 아이디 : leejsya@gachon.ac.kr | 비밀번호 : 12345678
@@ -84,12 +98,12 @@ Reverse Proxy 설정은 이미지에 포함되어 있으므로 따로 진행할 
 - Custom Nginx Configuration : client_max_body_size 20M; proxy_read_timeout 120s;
 > 20MB까지의 이미지를 업로드할 수 있도록 설정하고, 추론에 시간이 조금 걸릴 수 있기 때문에 timeout을 120초로 확장했음
 
-## 10. 데이터 영속성
+## 12. 데이터 영속성
 - mysql_data(mysql:/var/lib/mysql) - 회원 정보, 분석 결과 기록
 - inf_media(inf_server:/app/media) - 저장된 결과 이미지와 히트맵
 > 컨테이너를 삭제하고 같은 볼륨 이름으로 실행 시 데이터가 유지됨.
 
-## 11. API
+## 13. API
 - user_server | POST | `'/api/users/signup/'` | 회원가입
 - user_server | POST | `'/api/users/login/'` | 로그인
 - user_server | POST | `'/api/users/logout/'` | 로그아웃
@@ -98,7 +112,7 @@ Reverse Proxy 설정은 이미지에 포함되어 있으므로 따로 진행할 
 - inf_server | GET | `'/api/inf/results/'` | 저장 결과 목록 조회
 - inf_server | DELETE | `'/api/inf/results/<id>/'` | 결과 삭제
 
-## 12. 실행 순서
+## 14. 실행 순서
 > Host의 80, 81번 포트가 비어있어야 함.
 1. docker 네트워크 생성
 ```bash
